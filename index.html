@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #id {
+            position: relative;
+            width: 840px;
+        }
+
+        .image {
+            width: 840px;
+            height: 238px;
+            background-size: cover;
+            background-position: 0 center;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+
+        #color {
+            background-image: url("./color.svg");
+            width: 0;
+            z-index: 1000;
+        }
+
+        #gray {
+            background-image: url("./gray.svg");
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="color" class="image"></div>
+        <div id="gray" class="image"></div>
+    </div>
+    <script>
+        document.getElementById("container").addEventListener("mousemove", e => {
+            document.getElementById("color").style.width = e.offsetX + 'px';
+        });
+    </script>
+</body>
+
+</html>
